@@ -1,0 +1,185 @@
+:root {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #1f2937;
+  background: #eef2ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+  color: white;
+  padding: 28px;
+  border-radius: 18px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.hero p {
+  margin: 8px 0 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+}
+
+.product-form,
+.product-card,
+.empty-state,
+.banner {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.product-form {
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 16px;
+}
+
+.product-form h2,
+.list-header h2 {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font: inherit;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-actions,
+.card-actions,
+.list-header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.list-header {
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font: inherit;
+  cursor: pointer;
+  background: #e5e7eb;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn.danger {
+  background: #dc2626;
+  color: white;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.product-card {
+  padding: 18px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.price {
+  color: #047857;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.description {
+  color: #4b5563;
+  min-height: 48px;
+}
+
+.quantity {
+  font-size: 14px;
+}
+
+.empty-state,
+.banner {
+  padding: 16px 18px;
+}
+
+.banner.error {
+  background: #fef2f2;
+  color: #991b1b;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .product-form {
+    position: static;
+  }
+}

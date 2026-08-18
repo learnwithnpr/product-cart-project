@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+myenv/
+
+# Environment (never share real passwords)
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
