@@ -1,9 +1,10 @@
 # Product Card Manager (Student Project)
 
-Two projects that work together:
+Two FastAPI backends and one React UI:
 
-1. `product-backend-service` — FastAPI + PostgreSQL APIs
-2. `product-ui-app` — React UI for product cards
+1. `postgres-db-demo` — simple cursor SQL + folders (controller, schema, service)
+2. `product-backend-service` — FastAPI + SQLAlchemy + PostgreSQL
+3. `product-ui-app` — React UI for product cards
 
 ```
 React UI  -->  FastAPI  -->  PostgreSQL
