@@ -78,8 +78,12 @@ copy .env.example .env
 Example `.env`:
 
 ```
-DATABASE_URL=postgresql+psycopg2://postgres:postgres@localhost:5432/product_db
+DATABASE_URL=postgresql+psycopg2://postgres:YOUR_PASSWORD@localhost:5432/product_db
 ```
+
+Use the same username and password you use to log in to pgAdmin.
+
+If you see `password authentication failed`, the password in `.env` is wrong.
 
 5. Start the API:
 

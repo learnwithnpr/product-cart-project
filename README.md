@@ -41,10 +41,17 @@ API docs: http://localhost:8000/docs
 
 ### 2. Start the UI
 
-Open a new terminal:
+Node.js must be installed first (it includes `npm`).
+
+1. Open https://nodejs.org and install **LTS**
+2. Close the terminal and open a new one
+3. Check: `node -v` and `npm -v`
+
+Then:
 
 ```bash
-cd product-ui-app
+git clone https://github.com/learnwithnpr/product-cart-project.git
+cd product-cart-project/product-ui-app
 npm install
 npm run dev
 ```

@@ -27,6 +27,37 @@ product-ui-app/
 3. Update a product
 4. Delete a product
 
+## Install Node.js first (required)
+
+`npm` comes with Node.js. If `node -v` or `npm -v` fails, install Node.js **LTS**.
+
+1. Open https://nodejs.org
+2. Click the **LTS** button (recommended)
+3. Download the installer for your system
+4. Run the installer (keep the npm checkbox enabled)
+5. **Close the terminal and open a new one**
+6. Check:
+
+```bash
+node -v
+npm -v
+```
+
+Both should print a version (Node 18 or 20 is fine).
+
+**Windows:** download the `.msi` installer  
+**macOS:** download the `.pkg` installer  
+**Linux (Ubuntu/Debian):**
+
+```bash
+sudo apt update
+sudo apt install -y nodejs npm
+node -v
+npm -v
+```
+
+If Git is also missing (`git --version` fails), install Git from https://git-scm.com or use **Code → Download ZIP** on GitHub.
+
 ## Steps to run
 
 Start the backend first: http://localhost:8000
@@ -34,7 +65,8 @@ Start the backend first: http://localhost:8000
 Then:
 
 ```bash
-cd product-ui-app
+git clone https://github.com/learnwithnpr/product-cart-project.git
+cd product-cart-project/product-ui-app
 npm install
 npm run dev
 ```

@@ -17,13 +17,23 @@ Teaching flow:
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from sqlalchemy import inspect, text
+
 from app.database import Base, engine
 from app.controllers import product_router
 from app import models  # noqa: F401  # import models so SQLAlchemy creates tables
 
 # Create tables if they do not exist yet.
-# For class demos this is enough. Real projects later use migrations (Alembic).
+# create_all() will not add new columns to an old table.
 Base.metadata.create_all(bind=engine)
+
+# The demo table may already exist without description. Add it if missing.
+inspector = inspect(engine)
+if inspector.has_table("products"):
+    column_names = [column["name"] for column in inspector.get_columns("products")]
+    if "description" not in column_names:
+        with engine.begin() as connection:
+            connection.execute(text("ALTER TABLE products ADD COLUMN description VARCHAR(500)"))
 
 app = FastAPI(
     title="Product Backend Service",
