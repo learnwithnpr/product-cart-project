@@ -11,3 +11,8 @@ venv/
 # Node
 node_modules/
 dist/
+
+# Separate GitHub repos (cloned beside this monorepo for local work)
+/ai-chat-service/
+/ai-chat-ui/
+/postgres-db-demo/

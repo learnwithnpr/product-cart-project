@@ -1,26 +1,25 @@
-# Product Card Manager (Student Project)
+# Product Card Manager
 
-Two FastAPI backends and one React UI:
+Product CRUD demo with FastAPI + React.
 
-1. `postgres-db-demo` — simple cursor SQL + folders (controller, schema, service)
-2. `product-backend-service` — FastAPI + SQLAlchemy + PostgreSQL
-3. `product-ui-app` — React UI for product cards
+## Projects
+
+1. `product-backend-service` — FastAPI + PostgreSQL (SQLAlchemy)
+2. `product-ui-app` — React product card UI
 
 ```
-React UI  -->  FastAPI  -->  PostgreSQL
+React UI (:5173)  -->  FastAPI (:8000)  -->  PostgreSQL
 ```
+
+## Other course repos (separate)
+
+- https://github.com/learnwithnpr/postgres-db-demo
+- https://github.com/learnwithnpr/ai-chat-service
+- https://github.com/learnwithnpr/ai-chat-ui
 
 ## How to run
 
-PostgreSQL should already be installed and running.
-
-Create a database named `product_db` (pgAdmin or psql):
-
-```sql
-CREATE DATABASE product_db;
-```
-
-### 1. Start the backend
+### Backend
 
 ```bash
 cd product-backend-service
@@ -28,44 +27,20 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
-```
-
-Open `.env` and put your Postgres username and password.
-
-Then start the API:
-
-```bash
+# edit .env with your Postgres password
 uvicorn app.main:app --reload
 ```
 
-API docs: http://localhost:8000/docs
+Docs: http://localhost:8000/docs
 
-### 2. Start the UI
+### UI
 
-Node.js must be installed first (it includes `npm`).
-
-1. Open https://nodejs.org and install **LTS**
-2. Close the terminal and open a new one
-3. Check: `node -v` and `npm -v`
-
-Then:
+Install Node.js LTS from https://nodejs.org first.
 
 ```bash
-git clone https://github.com/learnwithnpr/product-cart-project.git
-cd product-cart-project/product-ui-app
+cd product-ui-app
 npm install
 npm run dev
 ```
 
 UI: http://localhost:5173
-
-## Classroom concepts
-
-| Layer | Folder | Job |
-|-------|--------|-----|
-| Controller | `app/controllers` | HTTP URLs |
-| Schema | `app/schemas` | JSON validation |
-| Service | `app/services` | Create / Read / Update / Delete |
-| Model | `app/models` | Database table |
-| Database | PostgreSQL | Stores products |
-| UI | `product-ui-app` | Product cards and forms |
